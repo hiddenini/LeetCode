@@ -1,5 +1,8 @@
 package 排序_数组;
 
+/**
+ * https://leetcode-cn.com/problems/merge-sorted-array/
+ */
 public class _88_合并两个有序数组 {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i1 = m - 1;
