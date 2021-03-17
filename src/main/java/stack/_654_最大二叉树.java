@@ -36,6 +36,10 @@ public class _654_最大二叉树 {
      * 最大树的每个节点的父节点的索引就是 左边 右边第一个比他大的元素 中的比较小的那个
      */
     public int[] parentIndexes(int nums[]) {
+        /*
+         * 1.扫描一遍所有的元素
+         * 2.保持栈从栈底到栈顶是单调递减的
+         */
         int[] lis = new int[nums.length];
         int[] ris = new int[nums.length];
         Stack<Integer> stack = new Stack<Integer>();
