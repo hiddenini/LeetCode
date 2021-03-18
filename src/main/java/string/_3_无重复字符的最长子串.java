@@ -69,6 +69,7 @@ public class _3_无重复字符的最长子串 {
         char[] chars = s.toCharArray();
         int[] array = new int[128];
         array[97] = 7;
+
         for (int i = 0; i < s.length(); i++) {
             System.out.println(chars[i]);
             System.out.println(array[chars[i]]);
