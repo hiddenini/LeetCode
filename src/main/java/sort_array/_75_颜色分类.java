@@ -1,4 +1,4 @@
-package 排序_数组;
+package sort_array;
 
 /**
  *https://leetcode-cn.com/problems/sort-colors/
