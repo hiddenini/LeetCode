@@ -11,14 +11,15 @@ package linkedList;
  */
 public class L_141_Cycle {
     public boolean hasCycle(ListNode head) {
-        ListNode slow=head;
-        ListNode fast=head.next;
-        while(head!=null && head.next.next!=null){
-            if(slow==fast){
+        if (head == null || head.next == null) return false;
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (fast != null && fast.next != null) {
+            if (slow == fast) {
                 return true;
             }
-            slow=slow.next;
-            fast=fast.next.next;
+            slow = slow.next;
+            fast = fast.next.next;
         }
         return false;
     }

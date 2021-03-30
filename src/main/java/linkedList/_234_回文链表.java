@@ -28,7 +28,6 @@ public class _234_回文链表 {
     }
 
     /**
-     * 使用快慢指针找到中间节点
      * 翻转链表
      *
      * @param head
@@ -71,7 +70,7 @@ public class _234_回文链表 {
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(2);
-        head.next.next.next.next= new ListNode(1);
+        head.next.next.next.next = new ListNode(1);
         System.out.println(head);
         _234_回文链表 obj = new _234_回文链表();
         obj.isPalindrome(head);
