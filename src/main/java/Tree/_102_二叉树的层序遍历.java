@@ -43,7 +43,6 @@ public class _102_二叉树的层序遍历 {
         List<List<Integer>> lists = new ArrayList<>();
         if (root == null) return lists;
         //每一层的高度,默认为1(第一层只有根节点)
-        int levelSize = 1;
         Queue<TreeNode> queue = new LinkedList<>();
         //根节点入队
         queue.offer(root);
@@ -56,7 +55,6 @@ public class _102_二叉树的层序遍历 {
             for (int i = 1; i <= currentListSize; i++) {
                 //头结点出队
                 TreeNode node = queue.poll();
-                levelSize--;
                 currentList.add(node.val);
                 if (node.left != null) {
                     queue.offer(node.left);
