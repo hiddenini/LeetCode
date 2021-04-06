@@ -2,6 +2,10 @@ package linkedList;
 
 /**
  * https://leetcode-cn.com/problems/reverse-linked-list-ii/
+ * <p>
+ * 在用递归思想解题时，明确递推公式的含义后
+ * <p>
+ * 不要试图想明白每一步是如何递归的，这很容易把自己绕晕哈
  */
 public class _92_反转链表_II {
     public ListNode reverseBetween(ListNode head, int left, int right) {
@@ -56,5 +60,32 @@ public class _92_反转链表_II {
             head = temp;
         }
         return newHead;
+    }
+
+    /**
+     * 上面的算法在如果 left 和 right 的区域很大
+     * 恰好是链表的头节点和尾节点时，找到 left 和 right 需要遍历一次
+     * 反转它们之间的链表还需要遍历一次
+     * <p>
+     * 可以遍历一次就完成
+     */
+    public ListNode reverseBetween1(ListNode head, int left, int right) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode pre = dummy;
+        //找到left节点的前一个节点,注意pre是从dummy开始的
+        for (int i = 1; i < left; i++) {
+            pre = pre.next;
+        }
+        ListNode cur = pre.next;
+        ListNode next;
+        for (int i = 0; i < right - left; i++) {
+            next = cur.next;
+            cur.next = next.next;
+            next.next = pre.next;
+            pre.next = next;
+        }
+
+        return dummy.next;
     }
 }
