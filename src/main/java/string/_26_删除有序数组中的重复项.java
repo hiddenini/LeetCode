@@ -23,7 +23,7 @@ public class _26_删除有序数组中的重复项 {
                 nums[i] = nums[j];
             }
         }
-        return i;
+        return i + 1;
     }
 
     /**
@@ -63,5 +63,23 @@ public class _26_删除有序数组中的重复项 {
             q++;
         }
         return p + 1;
+    }
+
+    public static void main(String[] args) {
+        int i = 0;
+        for (int j = 1; j < 3; j++) {
+            i++;
+        }
+
+        System.out.println(i);
+
+        int k = 0;
+        int m = 1;
+        while (m < 3) {
+            k++;
+            m++;
+        }
+
+        System.out.println(k);
     }
 }
