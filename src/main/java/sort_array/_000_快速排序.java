@@ -20,6 +20,7 @@ public class _000_快速排序 {
         while (begin < end) {
             //从右往左走
             while (begin < end) {
+                //这里不用加等号的原因是 有else分支 所以begin 或者end是一直在变化的
                 if (pivot < nums[end]) {
                     end--;
                 } else {
@@ -54,8 +55,10 @@ public class _000_快速排序 {
         if (i < j) {
             temp = R[i];
             while (i < j) {
+                //需要加== 如果碰到相同的元素的话,不加等号下面会死循环
                 while (i < j && R[j] >= temp) --j;
                 R[i] = R[j];
+                //需要加== 如果碰到相同的元素的话,不加等号下面会死循环
                 while (i < j && R[i] <= temp) ++i;
                 R[j] = R[i];
             }
@@ -80,10 +83,8 @@ public class _000_快速排序 {
             swap(R, i, randi);
             temp = R[i];
             while (i < j) {
-                //注意这里不能用>= 因为如果所有的元素都一样的时候如果加上等于也会导致分割出来的子序列是极度不均匀的,会导致O(n^2)
                 while (i < j && R[j] >= temp) --j;
                 R[i] = R[j];
-                //注意这里不能用>= 因为如果所有的元素都一样的时候如果加上等于也会导致分割出来的子序列是极度不均匀的,会导致O(n^2)
                 while (i < j && R[i] <= temp) ++i;
                 R[j] = R[i];
             }
@@ -147,10 +148,11 @@ public class _000_快速排序 {
         int b = 10;
         int r = (int) (Math.random() * (b - a + 1) + a);
         System.out.println(r);*/
-        int[] nums = new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6};
+        //int[] nums = new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6};
+        int[] nums = new int[]{3, 3, 3, 3};
         //quick(nums, 0, nums.length - 1);
-        //QuickSort(nums, 0, nums.length - 1);
-        sort(nums);
+        QuickSort(nums, 0, nums.length - 1);
+        //sort(nums);
         //QuickSort1(nums, 0, nums.length - 1);
         for (int num : nums) {
             System.out.println(num);
