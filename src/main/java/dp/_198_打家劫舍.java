@@ -24,7 +24,7 @@ public class _198_打家劫舍 {
     }
 
     /**
-     * 优化成滚动数组
+     * 优化成2个变量
      */
     public int rob1(int[] nums) {
         if (nums == null || nums.length == 0) return 0;
