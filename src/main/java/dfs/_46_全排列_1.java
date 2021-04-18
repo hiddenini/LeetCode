@@ -36,10 +36,25 @@ public class _46_全排列_1 {
             //contains耗时
             if (result.contains(num)) continue;
             result.add(num);
+            System.out.println("before");
+            for (Integer integer : result) {
+                System.out.print(integer+" ");
+            }
             dfs(idx + 1);
             //还原现场,删除list的最后一个元素
             result.remove(result.size() - 1);
+            System.out.println();
+            System.out.println("after");
+
+            for (Integer integer : result) {
+                System.out.print(integer+"");
+
+            }
         }
     }
 
+    public static void main(String[] args) {
+        _46_全排列_1 obj = new _46_全排列_1();
+        obj.permute(new int[]{1, 2, 3});
+    }
 }
