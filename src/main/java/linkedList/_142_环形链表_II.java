@@ -1,6 +1,7 @@
 package linkedList;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -20,5 +21,24 @@ public class _142_环形链表_II {
         return null;
     }
 
+    /**
+     * 快慢指针
+     */
+    public ListNode detectCycle1(ListNode head) {
+        ListNode fast = head, slow = head;
+        while (true) {
+            if (fast == null || fast.next == null) return null;
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) break;
+        }
+
+        ListNode pre = head;
+        while (pre != fast) {
+            pre = pre.next;
+            fast = fast.next;
+        }
+        return pre;
+    }
 
 }
