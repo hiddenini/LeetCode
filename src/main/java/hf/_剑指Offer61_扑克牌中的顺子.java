@@ -1,5 +1,6 @@
 package hf;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,4 +20,18 @@ public class _剑指Offer61_扑克牌中的顺子 {
         }
         return max - min < 5;
     }
+
+
+    public boolean isStraight1(int[] nums) {
+            Arrays.sort(nums);
+            int joker = 0;
+            for (int i = 0; i < 4; i++) {
+                if (nums[i] == 0) {
+                    joker++;
+                } else if (nums[i] == nums[i + 1])
+                    return false;
+            }
+            return nums[4] - nums[joker] < 5;
+    }
+
 }
